@@ -2,6 +2,11 @@
 
 A new Flutter project.
 
+## UI app
+| <img src="https://github.com/bmyaye/Mood-Tracker-Frontend/blob/develop/signin.png" height=25%> | <img src="https://github.com/bmyaye/Mood-Tracker-Frontend/blob/develop/signup.png" height=25%> |
+| :------------: | :------------: |
+| Signin Screen | Signup Screen | 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
