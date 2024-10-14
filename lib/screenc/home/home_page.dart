@@ -24,36 +24,62 @@ class _HomePageState extends State<HomePage> {
         ),
         automaticallyImplyLeading: false,
         actions: [
-          IconButton(
-            icon: CircleAvatar(
-              backgroundColor: Colors.pink[100],
-              child: Icon(
-                Icons.person,
-                color: Theme.of(context).colorScheme.tertiary,
-              ),
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfilePage()),
-              );
-            },
-          ),
-          IconButton(
-            icon: CircleAvatar(
-              backgroundColor: Colors.pink[100],
-              child: Icon(
-                Icons.settings,
-                color: Theme.of(context).colorScheme.tertiary,
-              ),
-            ),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SetingPage()),
-              );
-            },
-          ),
+          Padding(
+              padding: const EdgeInsets.only(right: 0),
+              child: SizedBox(
+                width: 60,
+                height: 60,
+                child: IconButton(
+                    iconSize: 60,
+                    icon: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFFFADAD),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.person,
+                        size: 30,
+                        color: Color(0xFFFDFFB6),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfilePage()),
+                      );
+                    }),
+              )),
+          Padding(
+              padding: const EdgeInsets.only(right: 0),
+              child: SizedBox(
+                width: 60,
+                height: 60,
+                child: IconButton(
+                    iconSize: 60,
+                    icon: Container(
+                      width: 60,
+                      height: 60,
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFFFADAD),
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.settings,
+                        size: 30,
+                        color: Color(0xFFFDFFB6),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SetingPage()),
+                      );
+                    }),
+              )),
         ],
       ),
       body: Stack(
