@@ -1,8 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:moody/blocs/signup_bloc/auth_event.dart';
-import 'package:moody/blocs/signup_bloc/auth_state.dart';
-import 'package:moody/repositories/auth_repository.dart';
+import 'package:moody/blocs/blocs.dart';
+import 'package:moody/repositories/auth.dart';
 import 'package:flutter/widgets.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {

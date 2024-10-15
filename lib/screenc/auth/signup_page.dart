@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:moody/blocs/signup_bloc/auth_app.dart';
+import 'package:moody/blocs/blocs.dart';
 import '../components/components.dart';
 
 class SignUpPage extends StatefulWidget {

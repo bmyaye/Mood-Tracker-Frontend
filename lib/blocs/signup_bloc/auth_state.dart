@@ -12,13 +12,19 @@ abstract class AuthState extends Equatable {
 }
 
 class User extends Equatable {
+  final int id;
   final String username;
   final String email;
 
-  const User({required this.username, required this.email});
+  const User({
+    required this.username,
+    required this.email,
+    required this.id,
+  });
 
   factory User.fromMap(Map<String, dynamic> json) {
     return User(
+      id: json['id'], // Assuming the response contains 'id' for the user
       username: json['username'],
       email: json['email'],
     );

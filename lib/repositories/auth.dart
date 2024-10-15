@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:moody/blocs/signup_bloc/auth_app.dart';
+import 'package:moody/blocs/blocs.dart';
 
 class AuthRepository {
   final storage = const FlutterSecureStorage();
@@ -37,6 +37,7 @@ class AuthRepository {
 
       // Assuming the response contains the user data, create and return the user
       return User(
+        id: result['id'],
         username: result['username'],
         email: result['email'],
       );

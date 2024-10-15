@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../components/components.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moody/blocs/signup_bloc/auth_app.dart';
+import 'package:moody/blocs/blocs.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});

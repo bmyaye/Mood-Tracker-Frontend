@@ -1,31 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moody/blocs/signup_bloc/auth_app.dart';
+import 'package:moody/blocs/blocs.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:moody/screenc/screenc.dart';
 
-import 'repositories/auth_repository.dart'; // นำเข้า WelcomePage ของคุณ
+import 'repositories/repository.dart'; // นำเข้า WelcomePage ของคุณ
 
 void main() {
   final storage = const FlutterSecureStorage();
   final authRepository = AuthRepository();
-  runApp(MyApp(storage: storage, authRepository: authRepository));
+  final moodRepository = MoodRepository();
+  runApp(MyApp(
+      storage: storage,
+      authRepository: authRepository,
+      moodRepository: moodRepository));
 }
 
 class MyApp extends StatelessWidget {
   final FlutterSecureStorage storage;
   final AuthRepository authRepository;
+  final MoodRepository moodRepository;
 
   const MyApp({
     super.key,
     required this.storage,
     required this.authRepository,
+    required this.moodRepository,
   });
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AuthBloc>(
-      create: (context) => AuthBloc(authRepository),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(
+          create: (context) => AuthBloc(authRepository),
+        ),
+        BlocProvider<MoodBloc>(
+          create: (context) => MoodBloc(moodRepository),
+        ),
+      ],
       child: MaterialApp(
         theme: ThemeData(
             colorScheme: const ColorScheme.light(
@@ -43,7 +56,9 @@ class MyApp extends StatelessWidget {
           '/welcome': (context) => const WelcomePage(),
           '/signin': (context) => const SignInPage(), // กำหนดเส้นทางที่นี่
           '/signup': (context) => const SignUpPage(),
-          '/home': (context) => const HomePage(),
+          '/home': (context) => const HomePage(
+                title: '',
+              ),
           '/profile': (context) => const ProfilePage(),
           '/changee_password': (context) => const ChangePasswordPage(),
         },

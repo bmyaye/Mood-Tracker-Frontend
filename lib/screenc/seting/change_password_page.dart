@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import '../components/components.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moody/blocs/signup_bloc/auth_app.dart';
+import 'package:moody/blocs/blocs.dart';
 
 class ChangePasswordPage extends StatefulWidget {
   const ChangePasswordPage({super.key});

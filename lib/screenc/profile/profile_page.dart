@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:moody/blocs/signup_bloc/auth_app.dart';
+import 'package:moody/blocs/blocs.dart';
 import 'package:moody/screenc/screenc.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -51,7 +51,9 @@ class _ProfilePageState extends State<ProfilePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePage()),
+                            builder: (context) => const HomePage(
+                                  title: '',
+                                )),
                       );
                     }),
               )),
@@ -119,20 +121,20 @@ class _ProfilePageState extends State<ProfilePage> {
                       CircleAvatar(
                         radius: 70,
                         backgroundColor: Colors.yellow[100],
-                        backgroundImage: AssetImage(
+                        backgroundImage: const AssetImage(
                           'assets/images/avatar_02.jpg', // ภาพแทนสำหรับ avatar
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Text(
                         state.user?.username ?? 'Unknown Username',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Align(
+                      const SizedBox(height: 20),
+                      const Align(
                         alignment: Alignment.centerLeft, // ชิดซ้าย
                         child: Text(
                           'Email',
@@ -154,8 +156,8 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Align(
+                      const SizedBox(height: 20),
+                      const Align(
                         alignment: Alignment.centerLeft, // ชิดซ้าย
                         child: Text(
                           'Gender',
@@ -165,7 +167,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       DropdownButtonFormField<String>(
                         value: 'Male',
                         items: ['Male', 'Female', 'Other']

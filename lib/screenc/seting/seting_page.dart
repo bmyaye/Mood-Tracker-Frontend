@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:moody/screenc/screenc.dart';
-import 'package:moody/blocs/signup_bloc/auth_app.dart';
+import 'package:moody/blocs/blocs.dart';
 
 class SetingPage extends StatefulWidget {
   const SetingPage({super.key});
@@ -71,7 +71,9 @@ class _SetingPageState extends State<SetingPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePage()),
+                            builder: (context) => const HomePage(
+                                  title: '',
+                                )),
                       );
                     }),
               )),
